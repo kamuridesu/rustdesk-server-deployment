@@ -1,4 +1,4 @@
-name: CI
+name: CD
 on: [push, workflow_dispatch]
 jobs:
   deploy:
@@ -22,7 +22,7 @@ jobs:
       - name: "Install tools"
         run: ssh admin@kamuridesu.tech "sudo apt-get update && sudo apt-get install -y docker-compose"
       - name: "Update repository"
-        run: ssh admin@kamuridesu.tech "rm -rf ${{ github.event.repository.name }}; git clone --depth=1 https://github.com/${{ github.repository }}.git -b deploy"
+        run: ssh admin@kamuridesu.tech "rm -rf ${{ github.event.repository.name }}; git clone --depth=1 https://github.com/${{ github.repository }}.git"
       # - name: "Build image"
       #   run: ssh admin@kamuridesu.tech "cd ${{ github.event.repository.name }} && sudo docker rm -f ${{ github.event.repository.name }} && sudo docker build -t ${{ github.repository }} ."
       - name: "Deploy new version"
