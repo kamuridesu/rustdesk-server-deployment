@@ -13,7 +13,7 @@ services:
       - 21116:21116/udp
       - 21118:21118
     image: rustdesk/rustdesk-server:latest
-    command: hbbs -r example.com:21117
+    command: hbbs -r 54.162.129.27:21117
     volumes:
       - ./hbbs:/root
     networks:
