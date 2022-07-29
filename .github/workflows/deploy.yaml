@@ -26,4 +26,4 @@ jobs:
       # - name: "Build image"
       #   run: ssh admin@kamuridesu.tech "cd ${{ github.event.repository.name }} && sudo docker rm -f ${{ github.event.repository.name }} && sudo docker build -t ${{ github.repository }} ."
       - name: "Deploy new version"
-        run: ssh admin@kamuridesu.tech "cd ${{ github.event.repository.name }} && sudo docker pull kanboard/kanboard:latest && sudo docker-compose --compatibility up -d"
+        run: ssh admin@kamuridesu.tech "cd ${{ github.event.repository.name }} && sudo docker-compose --compatibility up -d"
